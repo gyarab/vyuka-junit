@@ -4,16 +4,16 @@ import java.util.HashSet;
  *
  * @author jlana
  */
-public class MyTest {
+public class MyApp {
     String name;
 
-    public MyTest(String name) {
+    public MyApp(String name) {
         this.name = name;
     }
 
     @Override
     public boolean equals(Object obj) {
-        MyTest t = (MyTest)obj;
+        MyApp t = (MyApp)obj;
         return name.equals(t.name);
     }
 
@@ -27,11 +27,15 @@ public class MyTest {
         return name;
     }
 
-    public static void main(String[] argv) {
-        HashSet<MyTest> h = new HashSet<>();
+    public String capitalizeFirstLetter() {
+        return name.substring(0, 1).toUpperCase() + name.substring(1);
+    }
 
-        MyTest t1 = new MyTest("Jan");
-        MyTest t2 = new MyTest("Pepa");
+    public static void main(String[] argv) {
+        HashSet<MyApp> h = new HashSet<>();
+
+        MyApp t1 = new MyApp("Jan");
+        MyApp t2 = new MyApp("Pepa");
 
         h.add(t1);
         h.add(t2);
